@@ -4,6 +4,7 @@ import android.content.ClipData.Item
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -35,9 +36,11 @@ import com.example.superheroapp.model.superHeroes
 @Composable
 fun HeroesList(
     heroesList: List <SuperHero>,
-    modifier: Modifier = Modifier
-){
-    LazyColumn(modifier = modifier) {
+    modifier: Modifier = Modifier,
+    contentPadding: PaddingValues = PaddingValues(0.dp),
+
+    ){
+    LazyColumn(modifier = modifier, contentPadding = contentPadding) {
          items(heroesList){ hero ->
              HeroesItem(
                  hero = hero,
